@@ -1,51 +1,107 @@
-# React + TypeScript + Vite
+# YouTube Intro Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web application that helps content creators craft catchy YouTube intros from their video scripts. Built using **React**, **TypeScript**, and **Vite**, this project leverages an AI-powered LLM API to generate engaging introductions quickly and efficiently.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Features**
 
-## Expanding the ESLint configuration
+- **Script Input Box**: Paste your video script into an intuitive input field.
+- **AI-Powered Intro Generation**: Generate a professional YouTube intro with a single click.
+- **User-Friendly Interface**: Clean and responsive design for seamless user experience.
+- **Hosted on GitHub Pages**: Easily accessible from anywhere.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## **Getting Started**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Prerequisites
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Before you begin, ensure you have the following installed:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Node.js** (v16 or later)
+- **npm** (v7 or later)
+- A **GitHub account**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# youtube-intro-generator
+---
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/<your-username>/youtube-intro-generator.git
+   cd youtube-intro-generator
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to:
+
+   ```arduino
+   http://localhost:5173/
+   ```
+
+---
+
+### Deployment
+This project is hosted on **GitHub Pages**. To deploy your changes:
+
+1. Build the production-ready application:
+
+   ```bash
+   npm run build
+   ```
+
+2. Deploy to GitHub Pages:
+
+   ```bash
+   npm run deploy
+   ```
+
+Your site will be available at:
+
+
+
+   ```arduino
+   https://<your-username>.github.io/youtube-intro-generator/
+   ```
+
+---
+
+## Technologies Used
+
+**React**: Frontend library for building user interfaces.
+**TypeScript**: Ensures type safety and scalability.
+**Vite**: Fast and modern frontend build tool.
+**Axios**: For seamless API integration.
+**Jest**: Ensures the application is robust and bug-free.
+**GitHub Pages**: For effortless hosting and deployment.
+
+---
+
+## File Structure
+
+```plaintext
+./
+ ├── public/              # Static assets
+ ├── src/                 # Source code
+ │   ├── components/      # React components
+ │   ├── tests/           # Tests
+ │   ├── App.tsx          # Main application file
+ │   ├── main.tsx         # React entry point
+ │   ├── api.ts           # API interaction logic
+ ├── package.json         # Dependencies and scripts
+ ├── tsconfig.json        # TypeScript configuration
+ ├── README.md            # Project documentation
+ ```
