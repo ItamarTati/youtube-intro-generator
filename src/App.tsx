@@ -1,35 +1,80 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+import InputBox from './components/InputBox';
+import Button from './components/Button';
+import ResultsList from './components/ResultsList';
+import { callGeminiGenerateIntro, callChatGPTGenerateIntro, callClaudeGenerateIntro, callHuggingFaceGenerateIntro } from './api';
+import { formatIntro, formatErrorMessage } from './helpers';  
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+interface APIResult {
+  service: string;
+  intro?: string;  
+  error?: string; 
 }
 
-export default App
+function App() {
+  const [script, setScript] = useState('');
+  const [intros, setIntros] = useState<APIResult[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  const handleGenerate = async () => {
+    if (!script.trim()) return alert('Please paste a script!');
+
+    setLoading(true);
+    setIntros([]);
+
+    try {
+      const services = [
+        { name: 'Gemini', call: callGeminiGenerateIntro },
+        { name: 'ChatGPT', call: callChatGPTGenerateIntro },
+        { name: 'Claude', call: callClaudeGenerateIntro },
+        { name: 'Hugging Face', call: callHuggingFaceGenerateIntro },
+      ];
+
+      const results: APIResult[] = [];
+
+      for (const service of services) {
+        const promptResponse = await service.call(script);
+
+        console.log(promptResponse)
+
+        if (promptResponse.intro) {
+          results.push({
+            service: service.name,
+            intro: formatIntro(promptResponse.intro),
+          });
+        } else {
+          results.push({
+            service: service.name,
+            error: formatErrorMessage(service.name, promptResponse.error), 
+          });
+        }
+      }
+
+      console.log(results)
+
+      setIntros(results);
+    } catch (error) {
+      console.error('Failed to generate intros:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1>YouTube Intro Generator</h1>
+      <InputBox onInputChange={setScript} />
+      <Button onClick={handleGenerate} disabled={loading} />
+      {loading && <p>Loading... Generating intros from APIs...</p>}
+      {intros.length > 0 && (
+        <ResultsList 
+          intros={intros} 
+          error={intros.some(result => result.error)} 
+        />
+      )}
+    </div>
+  );
+}
+
+export default App;

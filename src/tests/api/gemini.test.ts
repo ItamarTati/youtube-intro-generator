@@ -1,9 +1,9 @@
-import { callChatGPTGenerateIntro } from '../../api/chatgpt';
+import { callGeminiGenerateIntro } from '../../api/gemini';
 import fetchMock from 'jest-fetch-mock';
 
 fetchMock.enableMocks();
 
-describe('callChatGPTGenerateIntro', () => {
+describe('callGeminiGenerateIntro', () => {
     afterEach(() => {
         fetchMock.resetMocks();
     });
@@ -11,57 +11,57 @@ describe('callChatGPTGenerateIntro', () => {
     it('should return the generated intro text on a successful API response', async () => {
         const mockPrompt = 'Generate an intro for a video script';
         const mockResponse = {
-            intro: 'This is the ChatGPT-generated intro text.',
+            intro: 'This is the generated intro text.',
         };
 
         fetchMock.mockResponseOnce(JSON.stringify(mockResponse));
 
-        const result = await callChatGPTGenerateIntro(mockPrompt);
+        const result = await callGeminiGenerateIntro(mockPrompt);
 
-        expect(result).toBe('This is the ChatGPT-generated intro text.');
+        expect(result.intro).toBe('This is the generated intro text.');
         expect(fetchMock).toHaveBeenCalledTimes(1);
         expect(fetchMock).toHaveBeenCalledWith(
-            'https://itamartati1.pythonanywhere.com/chatgpt-generate-intro',
+            'https://itamartati1.pythonanywhere.com/gemini-generate-intro',
             expect.objectContaining({
                 method: 'POST',
                 headers: expect.objectContaining({
                     'Content-Type': 'application/json',
                 }),
-                body: JSON.stringify({
-                    prompt: 'Write a catchy YouTube intro from the following video script: Generate an intro for a video script',
-                }),
+                body: JSON.stringify({ prompt: `Write a catchy YouTube intro from the following video script: ${mockPrompt}` }),
             })
         );
     });
 
-    it('should return an error object when the API responds with an error', async () => {
+    it('should handle errors from the API gracefully', async () => {
         const mockResponse = {
-            error: 'Failed to generate intro with ChatGPT',
+            error: 'Failed to generate intro with Gemini',
         };
 
         fetchMock.mockResponseOnce(JSON.stringify(mockResponse), { status: 500 });
 
-        const result = await callChatGPTGenerateIntro('Test prompt');
+        const result = await callGeminiGenerateIntro('Test prompt');
 
-        expect(result).toEqual({ error: 'Error: Failed to generate intro with ChatGPT' });
+        expect(result).toEqual({ error: 'Error: Failed to generate intro with Gemini' });
         expect(fetchMock).toHaveBeenCalledTimes(1);
     });
 
-    it('should return an error object for network errors', async () => {
+    it('should handle network errors gracefully', async () => {
+        const mockPrompt = 'Generate an intro for a video script';
+
         fetchMock.mockRejectOnce(new Error('Network error'));
 
-        const result = await callChatGPTGenerateIntro('Test prompt');
+        const result = await callGeminiGenerateIntro(mockPrompt);
 
         expect(result).toEqual({ error: 'Network error' });
         expect(fetchMock).toHaveBeenCalledTimes(1);
     });
 
-    it('should return an error object for unexpected errors', async () => {
+    it('should handle unexpected errors gracefully', async () => {
         fetchMock.mockResponseOnce(() => {
             throw new Error('Unexpected server error');
         });
 
-        const result = await callChatGPTGenerateIntro('Test prompt');
+        const result = await callGeminiGenerateIntro('Test prompt');
 
         expect(result).toEqual({ error: 'Unexpected server error' });
         expect(fetchMock).toHaveBeenCalledTimes(1);

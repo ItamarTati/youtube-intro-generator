@@ -23,4 +23,16 @@ describe('Button Component', () => {
         const button = screen.getByTestId('generate-button');
         expect(button).toBeDisabled();
     });
+
+    it('displays "Generating..." when `disabled` is true', () => {
+        render(<Button onClick={() => {}} disabled />);
+        const button = screen.getByTestId('generate-button');
+        expect(button).toHaveTextContent('Generating...');
+    });
+
+    it('displays "Generate Intro" when `disabled` is false', () => {
+        render(<Button onClick={() => {}} />);
+        const button = screen.getByTestId('generate-button');
+        expect(button).toHaveTextContent('Generate Intro');
+    });
 });
