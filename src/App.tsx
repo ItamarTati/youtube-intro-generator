@@ -3,7 +3,7 @@ import './App.css';
 import InputBox from './components/InputBox';
 import Button from './components/Button';
 import ResultsList from './components/ResultsList';
-import { callGeminiGenerateIntro, callChatGPTGenerateIntro, callClaudeGenerateIntro, callHuggingFaceGenerateIntro } from './api';
+import { callGeminiGenerateIntro, callChatGPTGenerateIntro, callClaudeGenerateIntro } from './api';
 import beAmzedImage from './assets/beAmazed.png'
 import { formatIntro, formatErrorMessage } from './helpers';
 import { toast, ToastContainer } from 'react-toastify';
