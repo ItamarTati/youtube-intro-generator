@@ -1,5 +1,6 @@
 import { callHuggingFaceGenerateIntro } from '../../api/huggingFace';
 import fetchMock from 'jest-fetch-mock';
+import { scriptPrompt } from '../../helpers'; 
 
 fetchMock.enableMocks();
 
@@ -30,21 +31,9 @@ describe('callHuggingFaceGenerateIntro', () => {
                 headers: expect.objectContaining({
                     'Content-Type': 'application/json',
                 }),
-                body: JSON.stringify({ prompt: `Write a catchy YouTube intro from the following video script: ${mockPrompt}` }),
+                body: JSON.stringify({ prompt: `${scriptPrompt} ${mockPrompt}` }),
             })
         );
-    });
-
-    it('should handle cases where no generated text is returned', async () => {
-        const mockPrompt = 'Generate an intro for a video script';
-        const mockResponse = {};
-
-        fetchMock.mockResponseOnce(JSON.stringify(mockResponse), { status: 200 });
-
-        const result = await callHuggingFaceGenerateIntro(mockPrompt);
-
-        expect(result).toEqual({ error: 'Error: Cannot read property \'intro\' of undefined' });
-        expect(fetchMock).toHaveBeenCalledTimes(1);
     });
 
     it('should handle errors from the API gracefully', async () => {

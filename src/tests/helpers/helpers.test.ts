@@ -2,30 +2,45 @@ import { formatIntro, formatErrorMessage } from '../../helpers';
 
 describe('formatIntro', () => {
   it('should remove markdown-like symbols', () => {
-    const intro = '**Voiceover (energetic, slightly sarcastic tone):** Ever wondered how some people manage to outsmart natural selection... spectacularly?';
+    const intro = 'Voiceover (**energetic**, slightly sarcastic tone): Ever wondered how some people manage to outsmart natural selection... spectacularly?';
     const formattedIntro = formatIntro(intro);
-
-    expect(formattedIntro).toBe('Voiceover (energetic, slightly sarcastic tone): Ever wondered how some people manage to outsmart natural selection... spectacularly?');
-  });
-
-  it('should add line breaks after sentences', () => {
-    const intro = '**Voiceover:** Ever wondered how some people manage to outsmart natural selection... spectacularly? **Voiceover:** This is where the survival instinct takes a holiday, and common sense goes on a permanent vacation.';
-    const formattedIntro = formatIntro(intro);
-
     expect(formattedIntro).toBe(
-      'Voiceover: Ever wondered how some people manage to outsmart natural selection... spectacularly?\n' +
-      'Voiceover: This is where the survival instinct takes a holiday, and common sense goes on a permanent vacation.'
+      'Voiceover (energetic, slightly sarcastic tone)\n: Ever wondered how some people manage to outsmart natural selection...\nspectacularly?'
     );
   });
 
-  it('should handle edge cases like empty strings or no markdown', () => {
+  it('should add line breaks after parentheses', () => {
+    const intro = 'Voiceover (energetic, slightly sarcastic tone): Ever wondered how some people manage to outsmart natural selection... spectacularly?';
+    const formattedIntro = formatIntro(intro);
+    expect(formattedIntro).toBe(
+      'Voiceover (energetic, slightly sarcastic tone)\n: Ever wondered how some people manage to outsmart natural selection...\nspectacularly?'
+    );
+  });
+
+  it('should add line breaks after sentences', () => {
+    const intro = 'Voiceover: Ever wondered how some people manage to outsmart natural selection... spectacularly? Voiceover: This is where the survival instinct takes a holiday, and common sense goes on a permanent vacation.';
+    const formattedIntro = formatIntro(intro);
+    expect(formattedIntro).toBe(
+      'Voiceover: Ever wondered how some people manage to outsmart natural selection...\nspectacularly?\nVoiceover: This is where the survival instinct takes a holiday, and common sense goes on a permanent vacation.'
+    );
+  });
+
+  it('should handle cases where no markdown is present', () => {
+    const intro = 'Voiceover: Ever wondered how some people manage to outsmart natural selection?';
+    const formattedIntro = formatIntro(intro);
+    expect(formattedIntro).toBe('Voiceover: Ever wondered how some people manage to outsmart natural selection?');
+  });
+
+  it('should handle edge cases like empty strings', () => {
     const intro = '';
     const formattedIntro = formatIntro(intro);
     expect(formattedIntro).toBe('');
+  });
 
-    const introNoMarkdown = 'Just a simple intro sentence without any markdown.';
-    const formattedNoMarkdown = formatIntro(introNoMarkdown);
-    expect(formattedNoMarkdown).toBe('Just a simple intro sentence without any markdown.');
+  it('should handle edge cases where there are no punctuation marks', () => {
+    const intro = 'Voiceover said that he was ready';
+    const formattedIntro = formatIntro(intro);
+    expect(formattedIntro).toBe('Voiceover said that he was ready');
   });
 });
 

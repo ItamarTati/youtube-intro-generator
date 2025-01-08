@@ -22,7 +22,7 @@ function App() {
 
   const handleGenerate = async () => {
     if (!script.trim()) {
-      toast.error('Please paste a script!');  // Show error toast
+      toast.error('Please paste a script!');  
       return;
     }
 

@@ -1,5 +1,6 @@
 import { callClaudeGenerateIntro } from '../../api/claude';
 import fetchMock from 'jest-fetch-mock';
+import { scriptPrompt } from '../../helpers'; 
 
 fetchMock.enableMocks();
 
@@ -27,7 +28,7 @@ describe('callClaudeGenerateIntro', () => {
                 headers: expect.objectContaining({
                     'Content-Type': 'application/json',
                 }),
-                body: JSON.stringify({ prompt: 'Write a catchy YouTube intro from the following video script: Generate an intro for a video script' }),
+                body: JSON.stringify({ prompt: `${scriptPrompt} ${mockPrompt}` }),
             })
         );
     });

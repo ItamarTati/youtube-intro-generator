@@ -1,5 +1,6 @@
 import { callGeminiGenerateIntro } from '../../api/gemini';
 import fetchMock from 'jest-fetch-mock';
+import { scriptPrompt } from '../../helpers'; 
 
 fetchMock.enableMocks();
 
@@ -27,7 +28,7 @@ describe('callGeminiGenerateIntro', () => {
                 headers: expect.objectContaining({
                     'Content-Type': 'application/json',
                 }),
-                body: JSON.stringify({ prompt: `Write a catchy YouTube intro from the following video script: ${mockPrompt}` }),
+                body: JSON.stringify({ prompt: `${scriptPrompt} ${mockPrompt}` }),
             })
         );
     });

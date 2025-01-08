@@ -1,102 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736224843228" clover="3.2.0">
-  <project timestamp="1736224843229" name="All files">
-    <metrics statements="70" coveredstatements="60" conditionals="25" coveredconditionals="16" methods="14" coveredmethods="10" elements="109" coveredelements="86" complexity="0" loc="70" ncloc="70" packages="2" files="7" classes="7"/>
+<coverage generated="1736321596433" clover="3.2.0">
+  <project timestamp="1736321596433" name="All files">
+    <metrics statements="137" coveredstatements="112" conditionals="47" coveredconditionals="27" methods="28" coveredmethods="20" elements="212" coveredelements="159" complexity="0" loc="137" ncloc="137" packages="4" files="13" classes="13"/>
     <package name="src">
-      <metrics statements="14" coveredstatements="12" conditionals="5" coveredconditionals="4" methods="2" coveredmethods="2"/>
-      <file name="helpers.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/helpers.ts">
-        <metrics statements="13" coveredstatements="12" conditionals="5" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <metrics statements="53" coveredstatements="30" conditionals="10" coveredconditionals="5" methods="5" coveredmethods="3"/>
+      <file name="App.tsx" path="/Users/elkedemaerschalk/youtube-intro-generator/src/App.tsx">
+        <metrics statements="33" coveredstatements="16" conditionals="7" coveredconditionals="2" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
-        <line num="10" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="14" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="18" count="2" type="cond" truecount="2" falsecount="1"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-      </file>
-      <file name="setupTests.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/setupTests.ts">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.api">
-      <metrics statements="56" coveredstatements="48" conditionals="20" coveredconditionals="12" methods="12" coveredmethods="8"/>
-      <file name="chatgpt.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/chatgpt.ts">
-        <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
       </file>
-      <file name="claude.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/claude.ts">
-        <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="cond" truecount="1" falsecount="1"/>
+      <file name="helpers.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/helpers.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="11" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
       </file>
-      <file name="gemini.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/gemini.ts">
-        <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="cond" truecount="1" falsecount="1"/>
-      </file>
-      <file name="huggingFace.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/huggingFace.ts">
-        <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
-        <line num="1" count="5" type="stmt"/>
-        <line num="2" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
-        <line num="13" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="cond" truecount="1" falsecount="1"/>
-      </file>
-      <file name="index.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/index.ts">
-        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="main.tsx" path="/Users/elkedemaerschalk/youtube-intro-generator/src/main.tsx">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="setupTests.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/setupTests.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.api">
+      <metrics statements="60" coveredstatements="60" conditionals="20" coveredconditionals="12" methods="12" coveredmethods="8"/>
+      <file name="chatgpt.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/chatgpt.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="claude.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/claude.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="gemini.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/gemini.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="huggingFace.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/huggingFace.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="index.ts" path="/Users/elkedemaerschalk/youtube-intro-generator/src/api/index.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="23" coveredstatements="21" conditionals="17" coveredconditionals="10" methods="11" coveredmethods="9"/>
+      <file name="Button.tsx" path="/Users/elkedemaerschalk/youtube-intro-generator/src/components/Button.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+      <file name="InputBox.tsx" path="/Users/elkedemaerschalk/youtube-intro-generator/src/components/InputBox.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+      </file>
+      <file name="ResultsList.tsx" path="/Users/elkedemaerschalk/youtube-intro-generator/src/components/ResultsList.tsx">
+        <metrics statements="16" coveredstatements="14" conditionals="14" coveredconditionals="7" methods="8" coveredmethods="6"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="30" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="10" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="83" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.support">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="fileMock.js" path="/Users/elkedemaerschalk/youtube-intro-generator/src/support/fileMock.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
   </project>
