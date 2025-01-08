@@ -1,9 +1,10 @@
 {
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
   "compilerOptions": {
-    "types": ["node", "jest", "@testing-library/jest-dom"],
-    "jsx": "react-jsx",    
-    "allowUmdGlobalAccess": true,
-    "esModuleInterop": true
-  },
-  "include": ["src/**/*", "src/custom.d.ts"],
+    "types": ["node", "jest", "@testing-library/jest-dom"]
+  }
 }

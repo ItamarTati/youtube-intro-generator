@@ -1,8 +1,8 @@
-import React from 'react'; 
+// import React from 'react'; 
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ResultsList from '../../components/ResultsList';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 beforeAll(() => {
   Object.defineProperty(navigator, 'clipboard', {
