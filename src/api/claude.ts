@@ -1,6 +1,8 @@
+import {scriptPrompt} from '../helpers'
+
 export const callClaudeGenerateIntro = async (prompt: string) => {
     try {
-        const fullPrompt = `Write a catchy YouTube intro from the following video script: ${prompt}`;
+        const fullPrompt = `${scriptPrompt} ${prompt}`;
 
         const response = await fetch('https://itamartati1.pythonanywhere.com/claude-generate-intro', {
             method: 'POST',

@@ -1,42 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-interface APIResult {
+interface ResponseProps {
   service: string;
-  intro?: string;
-  error?: string;
+  responseMessage: string;
+  hasError: boolean;
 }
 
 interface ResultsListProps {
-  intros: APIResult[];
-  error?: boolean;
+  responses: ResponseProps[];
 }
 
-const ResultsList: React.FC<ResultsListProps> = ({ intros, error }) => {
+const ResultsList: React.FC<ResultsListProps> = ({ responses }) => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const handleCopy = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      toast.success('Text copied to clipboard!');
+    });
+  };
+
+  const toggleExpand = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
     <div>
-      {error && <p style={{ color: 'red' }}>There was an error generating one or more intros.</p>}
+      {responses.some(response => response.hasError) && (
+        <p style={{ color: 'red' }}>There was an error generating one or more intros.</p>
+      )}
       <table>
         <thead>
           <tr>
             <th>Service</th>
             <th>Intro</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {intros.map((result, index) => (
+          {responses.map((response, index) => (
             <tr key={index}>
-              <td>{result.service}</td>
+              <td>{response.service}</td>
               <td>
-                {result.error ? (
-                  <span style={{ color: 'red' }}>{result.error}</span>
+                {response.hasError ? (
+                  <span style={{ color: 'red' }}>{response.responseMessage}</span>
                 ) : (
-                  result.intro
+                  <>
+                    {response.responseMessage && response.responseMessage.length > 200 ? (
+                      <>
+                        {expandedIndex === index
+                          ? response.responseMessage
+                          : `${response.responseMessage.substring(0, 200)}...`}
+                        <button className="show-more-button"
+                          onClick={() => toggleExpand(index)}
+                        >
+                          {expandedIndex === index ? 'Show Less' : 'Show More'}
+                        </button>
+                      </>
+                    ) : (
+                      response.responseMessage
+                    )}
+                  </>
                 )}
+              </td>
+              <td>
+                  <button
+                    onClick={() => handleCopy(response.responseMessage)}
+                  >
+                    Copy
+                  </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <ToastContainer />
     </div>
   );
 };

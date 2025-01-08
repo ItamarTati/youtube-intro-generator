@@ -1,6 +1,8 @@
+import {scriptPrompt} from '../helpers'
+
 export const callHuggingFaceGenerateIntro = async (prompt: string) => {
     try {
-        const fullPrompt = `Write a catchy YouTube intro from the following video script: ${prompt}`;
+        const fullPrompt = `${scriptPrompt} ${prompt}`;
 
         const response = await fetch('https://itamartati1.pythonanywhere.com/huggingface-generate-intro', {
             method: 'POST',

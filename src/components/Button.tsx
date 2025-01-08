@@ -6,7 +6,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ onClick, disabled = false }) => (
-  <button onClick={onClick} disabled={disabled} data-testid="generate-button">
+  <button className="generate-intro-button" onClick={onClick} disabled={disabled} data-testid="generate-button">
     {disabled ? 'Generating...' : 'Generate Intro'}
   </button>
 );
