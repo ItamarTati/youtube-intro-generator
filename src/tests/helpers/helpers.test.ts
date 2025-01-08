@@ -52,12 +52,12 @@ describe('formatErrorMessage', () => {
 
     it('should return an insufficient credit balance error message', () => {
         const result = formatErrorMessage('Hugging Face', 'Error: Your credit balance is low.');
-        expect(result).toBe('Hugging Face Error: You don\'t have enough quota for this request. Please upgrade your plan.');
+        expect(result).toBe(`Hugging Face Error: You don't have enough quota for this request. Please upgrade your plan.`);
     });
 
     it('should return an input too long error message for Hugging Face input length issue', () => {
         const result = formatErrorMessage('Hugging Face', 'Hugging Face Error: validation - Input validation error: `inputs` tokens + `max_new_tokens` must be <= 1024');
-        expect(result).toBe('Hugging Face Error: The input text is too long. Please shorten it and try again.');
+        expect(result).toBe('Hugging Face Error: The input text exceeds the maximum allowed length of 1024 characters. Please shorten it and try again.');
     });
 
     it('should return a generic error message for unknown errors', () => {

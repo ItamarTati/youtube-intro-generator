@@ -17,7 +17,7 @@ export const formatErrorMessage = (service: string, error: string) => {
     }
 
     if (error.includes('must be <= 1024')) {
-        return `${service} Error: The input text is too long. Please shorten it and try again.`;
+        return `${service} Error: The input text exceeds the maximum allowed length of 1024 characters. Please shorten it and try again.`;
     }
 
     return `${service} Error: An unexpected issue occurred. Please contact admin.`;
