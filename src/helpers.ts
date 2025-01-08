@@ -23,4 +23,4 @@ export const formatErrorMessage = (service: string, error: string) => {
     return `${service} Error: An unexpected issue occurred. Please contact admin.`;
 };
 
-export const scriptPrompt = "Write a captivating and engaging YouTube intro script designed to last approximately 30 seconds or more, focusing entirely on the spoken narrative. Avoid including any scene descriptions, visual elements, or music cues—just the spoken script. Respond with only the text of the intro without any explanations or additional commentary:";
+export const scriptPrompt = "Write a 30-second YouTube intro script which is 100 words or less focused on spoken narrative only. Exclude scene descriptions, visuals, or music cues. Respond with only the script text, without explanations or extra commentary.";

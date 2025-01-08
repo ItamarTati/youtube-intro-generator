@@ -52,7 +52,7 @@ function App() {
       setResponses(apiResultsTemporaryVariable);
     } catch (error) {
       console.error('Failed to generate intros:', error);
-      toast.error('Error generating intros!');  // Show error toast
+      toast.error('Error generating intros!');
     } finally {
       setLoading(false);
     }
@@ -67,14 +67,16 @@ function App() {
       <main id="main">
         <InputBox onInputChange={setScript} />
         <Button onClick={handleGenerate} disabled={loading} />
-        {loading && <p>Loading... Generating intros from APIs...</p>}
+        {loading && (
+          <div className="spinner"></div> 
+        )}
         {responses.length > 0 && (
           <ResultsList responses={responses} />
         )}
       </main>
-      <ToastContainer />  {/* To display toasts */}
+      <ToastContainer />
     </div>
   );
 }
 
-export default App
+export default App;
