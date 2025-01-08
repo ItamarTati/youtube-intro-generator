@@ -41,6 +41,7 @@ function App() {
 
       for (const service of services) {
         const promptResponse = await service.call(script);
+        console.log(promptResponse)
 
         if (promptResponse.intro) {
           apiResultsTemporaryVariable.push({ service: service.name, responseMessage: formatIntro(promptResponse.intro), hasError: false });

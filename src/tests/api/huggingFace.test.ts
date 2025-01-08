@@ -22,7 +22,7 @@ describe('callHuggingFaceGenerateIntro', () => {
 
         const result = await callHuggingFaceGenerateIntro(mockPrompt);
 
-        expect(result).toBe('This is the Hugging Face-generated intro text.');
+        expect(result.intro).toBe('This is the Hugging Face-generated intro text.');
         expect(fetchMock).toHaveBeenCalledTimes(1);
         expect(fetchMock).toHaveBeenCalledWith(
             'https://itamartati1.pythonanywhere.com/huggingface-generate-intro',

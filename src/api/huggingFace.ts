@@ -19,7 +19,7 @@ export const callHuggingFaceGenerateIntro = async (prompt: string) => {
         }
 
         const data = await response.json(); 
-        return data.intro;                  
+        return data;                  
     } catch (error: any) {
         console.error('Error calling Hugging Face generate intro:', error);
         return { error: error.message || 'Unknown error occurred' };
