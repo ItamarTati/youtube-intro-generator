@@ -33,8 +33,7 @@ function App() {
       const services = [
         { name: 'Gemini', call: callGeminiGenerateIntro },
         { name: 'ChatGPT', call: callChatGPTGenerateIntro },
-        { name: 'Claude', call: callClaudeGenerateIntro },
-        { name: 'Hugging Face', call: callHuggingFaceGenerateIntro },
+        { name: 'Claude', call: callClaudeGenerateIntro }
       ];
 
       const apiResultsTemporaryVariable: LLMResponse[] = [];
